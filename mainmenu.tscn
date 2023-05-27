@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cheo8gdsacftw"]
+
+[ext_resource type="Script" path="res://scripts/StartButton.gd" id="1_5dpli"]
+[ext_resource type="Texture2D" uid="uid://n0nlbimsof7x" path="res://titleart.jpg" id="2_d3fqw"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 584.0
+offset_right = 808.0
+offset_bottom = 640.0
+action_mode = 0
+text = "Start Game"
+script = ExtResource("1_5dpli")
+
+[node name="DifficultySelector" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 576.0
+offset_top = 528.0
+offset_right = 808.0
+offset_bottom = 560.0
+item_count = 3
+selected = 0
+popup/item_0/text = "Easy (10 Porcupines)"
+popup/item_0/id = 0
+popup/item_1/text = "Intermediate  (40 Porcupines)"
+popup/item_1/id = 1
+popup/item_2/text = "Expert  (99 Porcupines)"
+popup/item_2/id = 2
+
+[node name="DifficultyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 528.0
+offset_right = 448.0
+offset_bottom = 560.0
+text = "Difficulty"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Titleart" type="Sprite2D" parent="."]
+position = Vector2(576, 256)
+texture = ExtResource("2_d3fqw")

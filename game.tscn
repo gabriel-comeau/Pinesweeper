@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfiv7ia7sod8j"]
+
+[ext_resource type="Script" path="res://scripts/TopPanel.gd" id="1_1vqx4"]
+[ext_resource type="Theme" uid="uid://d400epgbhhvk" path="res://primary-theme.tres" id="1_85866"]
+[ext_resource type="Script" path="res://scripts/Board.gd" id="2_ab6ji"]
+[ext_resource type="Texture2D" uid="uid://bx2h86larvv73" path="res://tiles/tileset.png" id="2_ujnvm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p5ts"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rd8dw"]
+resource_name = "Tiles"
+texture = ExtResource("2_ujnvm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m8fao"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_rd8dw")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TopPanel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 64.0
+script = ExtResource("1_1vqx4")
+
+[node name="MinesLeftLabel" type="Label" parent="TopPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 162.0
+offset_bottom = 48.0
+theme = ExtResource("1_85866")
+text = "Porcupines Remaining:"
+vertical_alignment = 1
+
+[node name="MinesLeft" type="Label" parent="TopPanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 264.0
+offset_bottom = 48.0
+theme = ExtResource("1_85866")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p5ts")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="TopPanel"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 16.0
+offset_right = 1032.0
+offset_bottom = 48.0
+theme = ExtResource("1_85866")
+text = "Time:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="TopPanel"]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 16.0
+offset_right = 1096.0
+offset_bottom = 48.0
+theme = ExtResource("1_85866")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p5ts")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameStatusLabel" type="Label" parent="TopPanel"]
+offset_left = 456.0
+offset_top = 16.0
+offset_right = 544.0
+offset_bottom = 48.0
+theme = ExtResource("1_85866")
+text = "You Win!"
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="TopPanel"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 16.0
+offset_right = 649.0
+offset_bottom = 48.0
+text = "Restart"
+
+[node name="MainMenuButton" type="Button" parent="TopPanel"]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 16.0
+offset_right = 768.0
+offset_bottom = 48.0
+text = "Main Menu"
+
+[node name="Board" type="Node2D" parent="."]
+script = ExtResource("2_ab6ji")
+
+[node name="GameTiles" type="TileMap" parent="Board"]
+position = Vector2(0, 64)
+tile_set = SubResource("TileSet_m8fao")
+format = 2
