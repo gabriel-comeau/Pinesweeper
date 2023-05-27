@@ -25,7 +25,6 @@ var TotalMines: int
 var Mines: Array[Vector2i]
 
 #  State - this is a 2d array that will mutate as the game goes on
-#  TODO: can't seem to type hint a 2d array?  Like Array[Array[States]] throws a nested collection error
 var BoardState
 
 var GameWon: bool
@@ -54,7 +53,6 @@ func _init(height: int, width: int, totalMines: int, mines: Array):
 
 # Handle actions where the player left-clicks on a cell
 func leftClick(pos: Vector2i, firstClick: bool = false) -> bool:
-	
 	if self.GameLost || self.GameWon:
 		return false
 		
@@ -98,7 +96,6 @@ func leftClick(pos: Vector2i, firstClick: bool = false) -> bool:
 
 # Handle actions where the player right clicks on a cell		
 func rightClick(pos: Vector2i):
-	
 	if self.GameLost || self.GameWon:
 		return
 	
@@ -153,7 +150,6 @@ func doChord(pos: Vector2i):
 # Another note: we are definitely going to be rechecking grid squares multiple times with this method
 # but it keeps the algo as simple as possible so probably worth it
 func doFlood(pos: Vector2i, checked: Array[Vector2i]):
-	
 	var surroundingPositions := self.getValidSurroundingPositions(pos)
 	for sPos in surroundingPositions:
 		if checked.has(sPos):
@@ -170,7 +166,6 @@ func doFlood(pos: Vector2i, checked: Array[Vector2i]):
 
 # Check if the game's been won or not
 func isGameWon() -> bool:
-	
 	# check for any unclicked squares or wrongly flagged mines
 	for yPos in range(self.Height):
 		for xPos in range(self.Width):

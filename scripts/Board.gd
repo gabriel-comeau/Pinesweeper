@@ -133,4 +133,3 @@ func getTileAtlasCoordForState(state: Field.States) -> Vector2i:
 		return Vector2i(14,0)
 	else:
 		return Vector2i(0,0)
-	

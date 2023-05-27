@@ -12,7 +12,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	# Show timer
 	var seconds := Globals.getElapsedSeconds()
 	if seconds == 0:
@@ -51,7 +50,6 @@ func mainMenuPress():
 
 # Restart the game, generate two new fields and set the board back to starting state
 func resetBoard():
-	
 	var generator := FieldGenerator.new()
 	var currentWidth := Globals.ActiveField.Width
 	var currentHeight := Globals.ActiveField.Height

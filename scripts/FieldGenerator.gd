@@ -6,7 +6,6 @@ func _init():
 	self.RNG.randomize()
 
 func Generate(width: int, height: int, mineCount: int, noMineVectors: Array) -> Field:
-
 	var mines: Array[Vector2i] = []
 	
 	while mines.size() < mineCount:
@@ -36,5 +35,4 @@ func Generate(width: int, height: int, mineCount: int, noMineVectors: Array) -> 
 		mines.append(Vector2i(x,y))
 				
 	return Field.new(height, width, mineCount, mines)
-	
 
